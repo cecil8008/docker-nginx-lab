@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+</head>
+<body>
+
+    <h1>Frontend App</h1>
+
+    <button onclick="getUsers()">Get Users</button>
+    <button onclick="getOrders()">Get Orders</button>
+    <button onclick="getProducts()">Get Products</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        function getUsers() {
+            fetch('/api/users')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+                });
+        }
+
+        function getOrders() {
+            fetch('/api/orders')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+                });
+        }
+
+        function getProducts() {
+            fetch('/api/products')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+                });
+        }
+    </script>
+
+</body>
+</html>
