@@ -20,5 +20,5 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        run: docker build -t my-app ./docker
+        run: docker build -t my-app ./backend
 
